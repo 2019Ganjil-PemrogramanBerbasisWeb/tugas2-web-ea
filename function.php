@@ -29,7 +29,7 @@ echo <<<EOT
 			    <div class="navbar">			
             <ul class="navbar-nav absolute-right">
 			        <li class="nav-item">
-                <a class="nav-link active" href="index.php">Home</a>
+                <a class="nav-link" href="index.php">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="about.php">About</a>
