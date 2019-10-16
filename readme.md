@@ -1,8 +1,8 @@
 # Kelompok EA
 
-Dindra Setyadharma (053118400000xx)
+I Made Dindra Setyadharma (05311840000008)
 Muhammad Ilya Asha Soegondo (05311840000010)
-Milenia (053118400000xx)
+Milenia Ulwan Zafira (05311840000020)
 
 ## Installation
 
