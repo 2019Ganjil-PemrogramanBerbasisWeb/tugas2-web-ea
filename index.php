@@ -58,6 +58,25 @@
         </div>
       </div>
     </section>
+
+    <section class="overflow">
+<div class="container">
+  <div class="row justify-content-center align-items-center">         
+    <div class="col-lg-7 order-lg-3 order-1 mb-lg-0 mb-5">
+      <img src="images/person_testimonial_1.jpg" alt="Image placeholder" class="img-md-fluid">
+    </div>
+    <div class="col-lg-1 order-lg-2"></div>
+    <div class="col-lg-4 order-lg-1 order-2 mb-lg-0 mb-5">
+      <blockquote class="testimonial">
+        &ldquo; This Website is From Me to You All, learn and practice everything you learn here &rdquo;
+      </blockquote>
+  <p>&mdash; Pak Husni, Dosen ter <i class="fa fa-heart-o"></i></p>
+    </div>
+  </div>
+</div>
+</section>
+<!-- END section -->
+
     <!-- END section -->
  
  <?php template_footer();?>
