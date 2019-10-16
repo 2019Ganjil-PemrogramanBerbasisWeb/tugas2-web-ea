@@ -40,5 +40,8 @@ if(!empty($_POST['remember'])){
 	$querynew = "UPDATE accounts SET user_hash='$newhash' where username = '$username'";
 	$dnn = $mysqli->query($querynew);
 } else {
-	if(isset($_COOKIE["member_login
+	if(isset($_COOKIE["member_login"])){
+		setcookie("member_login", "");
+	}
+}
 ?>
