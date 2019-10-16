@@ -34,4 +34,11 @@ if ($stmt->num_rows > 0) {
 	echo 'Incorrect username!';
 }
 $stmt->close();
+if(!empty($_POST['remember'])){
+	setcookie("member_login", hash(sha256, $_POST['username']), time()+60*60*24*180);
+	$newhash = hash(sha256, $_POST['username']);
+	$querynew = "UPDATE accounts SET user_hash='$newhash' where username = '$username'";
+	$dnn = $mysqli->query($querynew);
+} else {
+	if(isset($_COOKIE["member_login
 ?>
