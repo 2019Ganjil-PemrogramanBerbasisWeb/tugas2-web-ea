@@ -21,7 +21,7 @@
     </section>
     <!-- END section -->
 
-    <section class="school-features d-flex" style="background-image: url(images/big_image_3.svg);">
+    <section class="school-features d-flex" style="background-image: url(images/big_image_3.svg); background-size: auto;">
 
       <div class="inner">
         <div class="media d-block feature">
