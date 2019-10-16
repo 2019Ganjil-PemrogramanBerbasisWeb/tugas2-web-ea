@@ -40,7 +40,7 @@ echo <<<EOT
                 <a class="nav-link" href="contact.php">Contact</a>
               </li>
               <li class="nav-item">
-                <a href="dashboard/index.php" class="nav-link">Login</a>
+                <a href="dashboard/index.html" class="nav-link">Login</a>
               </li>
             </ul>
             </div>
