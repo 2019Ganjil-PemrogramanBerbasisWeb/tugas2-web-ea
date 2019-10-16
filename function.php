@@ -27,20 +27,20 @@ echo <<<EOT
      
       <nav class="navbar navbar-expand-md navbar-dark bg-light">
         <div class="container">
-          <a class="navbar-brand absolute" href="index.html">e-Learning Academy</a>
+          <a class="navbar-brand absolute" href="index.php">e-Learning Academy</a>
 			<div class="navbar">			
             <ul class="navbar-nav absolute-right">
 			  <li class="nav-item">
-                <a class="nav-link active" href="index.html">Home</a>
+                <a class="nav-link active" href="index.php">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="about.php">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
+                <a class="nav-link" href="contact.php">Contact</a>
               </li>
               <li class="nav-item">
-                <a href="dashboard/index.html" class="nav-link">Login</a>
+                <a href="dashboard/index.php" class="nav-link">Login</a>
               </li>
             </ul>
             </div>
@@ -64,8 +64,8 @@ echo <<<EOT
         <div class="row">
           <div class="col-md-4" style="margin-left: 100px">
             <ul class="list-unstyled">
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="about.php">About Us</a></li>
+              <li><a href="contact.php">Contact Us</a></li>
              </ul>
         </div>
         
