@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS `accounts` (
     `password` varchar(255) NOT NULL, 
     `email` varchar(100) NOT NULL,
     `fullname` varchar(255) NOT NULL,
+    `user_hash` varchar(255) DEFAULT '',
     `activation_code` varchar(50) DEFAULT '',
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
