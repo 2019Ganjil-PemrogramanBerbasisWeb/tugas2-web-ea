@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `images` (
 
 ## Usage
 
-Serve with XAMPP or use LAMP stack
+Serve with XAMPP or use LAMP stack. Email Activation Features requires Simple Mail Transfer Protocol (SMTP).
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
