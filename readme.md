@@ -1,7 +1,7 @@
 # Kelompok EA
 
-I Made Dindra Setyadharma (05311840000008)
-Muhammad Ilya Asha Soegondo (05311840000010)
+I Made Dindra Setyadharma (05311840000008) 
+Muhammad Ilya Asha Soegondo (05311840000010) 
 Milenia Ulwan Zafira (05311840000020)
 
 ## Installation
@@ -36,7 +36,8 @@ CREATE TABLE IF NOT EXISTS `images` (
 
 ## Usage
 
-Serve with XAMPP or use LAMP stack. Email Activation Features requires Simple Mail Transfer Protocol (SMTP).
+Serve with XAMPP or use LAMP stack. 
+Email Activation Features requires Simple Mail Transfer Protocol (SMTP).
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
@@ -45,3 +46,5 @@ Please make sure to update tests as appropriate.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+<!-- This is commented out. -->
