@@ -1,4 +1,4 @@
-<?php // Template header, feel free to customize this
+<?php // Shared Header & Footer
 function template_header($title) {
 echo <<<EOT
 <!doctype html>
@@ -22,15 +22,13 @@ echo <<<EOT
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    
     <header role="banner">
-     
       <nav class="navbar navbar-expand-md navbar-dark bg-light">
         <div class="container">
           <a class="navbar-brand absolute" href="index.php">e-Learning Academy</a>
-			<div class="navbar">			
+			    <div class="navbar">			
             <ul class="navbar-nav absolute-right">
-			  <li class="nav-item">
+			        <li class="nav-item">
                 <a class="nav-link active" href="index.php">Home</a>
               </li>
               <li class="nav-item">
@@ -43,22 +41,23 @@ echo <<<EOT
                 <a href="dashboard/index.html" class="nav-link">Login</a>
               </li>
             </ul>
-            </div>
+          </div>
         </div>
       </nav>
     </header>
-    <!-- END header -->
+<!-- END HEADER -->
 EOT;
 }
 
 function template_footer() {
 echo <<<EOT
+<!-- START FOOTER -->
 <footer class="site-footer" style="background-image: url(images/big_image_3.svg);">
-<div class="container">
-  <div class="row mb-5">
-    <div class="col-md-4">
-      <h3>About</h3>
-      <p>EA is acronym e-Learning Academy and this is our Website for Middle Exam in Web-based programming courses.</p>
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md-4">
+        <h3>About</h3>
+        <p>EA is acronym e-Learning Academy and this is our Website for Middle Exam in Web-based programming courses.</p>
       </div>
       <div class="col-md-6 ml-auto">
         <div class="row">
@@ -66,36 +65,33 @@ echo <<<EOT
             <ul class="list-unstyled">
               <li><a href="about.php">About Us</a></li>
               <li><a href="contact.php">Contact Us</a></li>
-             </ul>
+            </ul>
+          </div>
         </div>
-        
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</p>
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-12">
-      <p>
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</p>
-    </div>
-  </div>
-</div>
 </footer>
-<!-- END footer -->
+<!-- END FOOTER -->
 
-<!-- loader -->
-<div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
+    <!-- loader -->
+    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
 
-<script src="js/jquery-3.2.1.min.js"></script>
-<script src="js/jquery-migrate-3.0.0.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery.waypoints.min.js"></script>
-<script src="js/jquery.stellar.min.js"></script>
-
-
-<script src="js/main.js"></script>
-</body>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery-migrate-3.0.0.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    
+    <script src="js/main.js"></script>
+  </body>
 </html>
 EOT;
 }
