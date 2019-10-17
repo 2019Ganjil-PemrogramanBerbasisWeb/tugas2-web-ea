@@ -12,14 +12,14 @@ Install Database (Default is "test")
 ```sql
 CREATE TABLE IF NOT EXISTS `accounts` (
     `id` int(11) NOT NULL AUTO_INCREMENT, 
-    `username` varchar(50) NOT NULL, 
+    `username` varchar(50) NOT NULL UNIQUE, 
     `password` varchar(255) NOT NULL, 
     `email` varchar(100) NOT NULL,
     `fullname` varchar(255) NOT NULL,
-    `user_hash` varchar(255) DEFAULT '',
-    `activation_code` varchar(50) DEFAULT '',
+    `lookup` varchar(255) DEFAULT NULL,
+    `validator` varchar(255) DEFAULT NULL,
     PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 ```
 
 2. Images Table
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `images` (
   	`path` text NOT NULL,
   	`uploaded_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 ```
 
 ## Usage
