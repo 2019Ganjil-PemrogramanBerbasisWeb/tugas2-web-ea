@@ -73,7 +73,7 @@ if ($stmt = $con->prepare('SELECT id, password, fullname FROM accounts WHERE use
 		$stmt->execute();
 		echo '<p>You have successfully registered, you can now login!</p>';
 		echo '<p>You will be redirected to your dashboard or you can <b><a href="homepage.php">click here</a></b></p>';
-		redirect("homepage.php");
+		redirect("home.php");
         } else {
 		// Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
 		echo 'Could not prepare statement!';
