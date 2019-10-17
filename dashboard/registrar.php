@@ -86,7 +86,7 @@ if ($stmt = $con->prepare('SELECT id, password, fullname FROM accounts WHERE use
 	// Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
 	echo 'Could not prepare statement!';
 	echo 'You will be redirected back';
-	redirect(/);
+	redirect(index.html);
 }
 $con->close();
 ?>
