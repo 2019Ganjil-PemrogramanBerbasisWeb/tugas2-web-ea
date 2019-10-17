@@ -12,7 +12,7 @@ if (isset($_POST['email'], $_POST['subject'], $_POST['name'], $_POST['msg'])) {
 		$subject = $_POST['subject'];
 		$message = $_POST['msg'];
 		$headers = 'From: ' . $_POST['email'] . "\r\n" . 'Reply-To: ' . $_POST['email'] . "\r\n" . 'X-Mailer: PHP/' . phpversion();
-		//mail($to, $subject, $message, $headers);
+		//mail($to, $subject, $message, $headers); //Nunggu mail server online
 		$response = 'Message sent!';		
 	}
 }
