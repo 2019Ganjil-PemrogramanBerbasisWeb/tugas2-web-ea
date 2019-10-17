@@ -1,37 +1,34 @@
 <?php
-function redirect($url) {
-	sleep(3);
-	header("Location: $url");
+function redirect($err_message, $url) {
+	echo <<<EOT
+	<p>$err_message</p>
+	<p>You will be redirected<p>
+	<script>
+	setTimeout(function(){
+	   window.location.href = '$url';
+	}, 3000);
+	</script>
+	EOT;
 }
 include 'db_con.php';
 // Now we check if the data was submitted, isset() function will check if the data exists.
 if (!isset($_POST['username'], $_POST['password'], $_POST['email'])) {
 	// Could not get the data that should have been sent.
-	die ('Please complete the registration form!');
-	echo 'You will be redirected back';
-	redirect("index.html");
+	redirect('Please complete the registration form!', "index.html");
 }
 // Make sure the submitted registration values are not empty.
 if (empty($_POST['username']) || empty($_POST['password']) || empty($_POST['email'])) {
 	// One or more values are empty.
-	die ('Please complete the registration form');
-	echo 'You will be redirected back';
-	redirect("index.html");
+	redirect('Please complete the registration form', "index.html");
 }
 if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-	die ('Email is not valid!');
-	echo 'You will be redirected back';
-	redirect("index.html");
+	redirect('Email is not valid!', "index.html");
 }
 if (preg_match('/[A-Za-z0-9]+/', $_POST['username']) == 0) {
-	die ('Username is not valid!');
-	echo 'You will be redirected back';
-	redirect("index.html");
+	redirect('Username is not valid!', "index.html");
 }
 if (strlen($_POST['password']) > 20 || strlen($_POST['password']) < 5) {
-	die ('Password must be between 5 and 20 characters long!');
-	echo 'You will be redirected back';
-	redirect("index.html");
+	redirect('Password must be between 5 and 20 characters long!', "index.html");
 }
 
 // We need to check if the account with that username exists.
@@ -43,9 +40,7 @@ if ($stmt = $con->prepare('SELECT id, password, fullname FROM accounts WHERE use
 	// Store the result so we can check if the account exists in the database.
 	if ($stmt->num_rows > 0) {
 		// Username already exists
-		echo 'Username exists, please choose another!';
-	echo 'You will be redirected back';
-	redirect("index.html");
+		redirect('Username exists, please choose another!', "index.html");
 	} else {
 		// Username doesnt exists, insert new account
 		// Email Activation
@@ -72,21 +67,17 @@ if ($stmt = $con->prepare('SELECT id, password, fullname FROM accounts WHERE use
 		$stmt->bind_param('ssss', $_POST['username'], $password, $_POST['email'], $_POST['fullname']);
 		$stmt->execute();
 		echo '<p>You have successfully registered, you can now login!</p>';
-		echo '<p>You will be redirected to your dashboard or you can <b><a href="homepage.php">click here</a></b></p>';
-		redirect("home.php");
+		echo '<p><b><a href="home.php">click here</a></b></p>';
+		redirect("","home.php");
         } else {
 		// Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
-		echo 'Could not prepare statement!';
-		echo 'You will be redirected back';
-		redirect("index.html");
+		redirect('Could not prepare statement!', "index.html");
         }
     }
     $stmt->close();
 } else {
 	// Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
-	echo 'Could not prepare statement!';
-	echo 'You will be redirected back';
-	redirect("index.html");
+	redirect('Could not prepare statement!', "index.html");
 }
 $con->close();
 ?>

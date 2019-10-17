@@ -1,10 +1,21 @@
 <?php
+function redirect($err_message, $url) {
+	echo <<<EOT
+	<p>$err_message</p>
+	<p>You will be redirected<p>
+	<script>
+	setTimeout(function(){
+	   window.location.href = '$url';
+	}, 3000);
+	</script>
+	EOT;
+}
 session_start();
 include 'db_con.php';
 // Now we check if the data from the login form was submitted, isset() will check if the data exists.
 if ( !isset($_POST['username'], $_POST['password']) ) {
 	// Could not get the data that should have been sent.
-	die ('Please fill both the username and password field!');
+	redirect('Please fill both the username and password field!', 'index.html');
 }
 // Prepare our SQL, preparing the SQL statement will prevent SQL injection.
 if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?')) {
@@ -28,17 +39,19 @@ if ($stmt->num_rows > 0) {
         $_SESSION['id'] = $id;
         header('Location: home.php');
 	} else {
-		echo 'Incorrect password!';
+		redirect('Incorrect password!', 'index.html');
 	}
 } else {
-	echo 'Incorrect username!';
+	redirect('Incorrect username!', 'index.html');
 }
 $stmt->close();
 if(!empty($_POST['remember'])){
-	setcookie("member_login", hash(sha256, $_POST['username']), time()+60*60*24*180);
-	$newhash = hash(sha256, $_POST['username']);
-	$querynew = "UPDATE accounts SET user_hash='$newhash' where username = '$username'";
-	$dnn = $mysqli->query($querynew);
+	setcookie("member_login", hash("sha256", $_POST['username']), time()+60*60*24*180);
+	$newhash = hash("sha256", $_POST['username']);
+	$querynew = "UPDATE accounts SET user_hash= ? where username = ?";
+	$stmt = $con->prepare($querynew);
+	$stmt->bind_param('ss', $newhash, $_POST['username']);
+	$stmt->execute();
 } else {
 	if(isset($_COOKIE["member_login"])){
 		setcookie("member_login", "");
