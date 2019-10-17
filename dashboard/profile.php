@@ -1,4 +1,23 @@
 <?php
+if(isset($_POST['submit'])){
+$response = '';
+if (isset($_POST['email'], $_POST['subject'], $_POST['name'], $_POST['msg'])) {
+	if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+		$response = 'Email is not valid!';
+	} else if (empty($_POST['email']) || empty($_POST['subject']) || empty($_POST['name']) || empty($_POST['msg'])) {
+		$response = 'Please complete all fields!';
+	} else {
+		$to      = 'noreply@localhost';
+		$from    = $_POST['email'];
+		$subject = $_POST['subject'];
+		$message = $_POST['msg'];
+		$headers = 'From: ' . $_POST['email'] . "\r\n" . 'Reply-To: ' . $_POST['email'] . "\r\n" . 'X-Mailer: PHP/' . phpversion();
+		mail($to, $subject, $message, $headers);
+		$response = 'Message sent!';		
+	}
+}
+}
+
 // We need to use sessions, so you should always start sessions using the below code.
 session_start();
 include 'db_con.php';
@@ -95,12 +114,12 @@ $stmt->close();
 		<div class="content">
 			<h2>Contact Us</h2>
 			<div>
-				<form class="contact" method="post" action="contact.php">
+				<form class="contact" method="post" action="profile.php">
 					<input type="email" name="email" placeholder="Your Email Address" required>
 					<input type="text" name="name" placeholder="Your Name" required>
 					<input type="text" name="subject" placeholder="Subject" required>
 					<textarea name="msg" placeholder="What would you like to contact us about?" required></textarea>
-					<input type="submit">
+					<input type="submit" name="submit" value="submit">
 				</form>
 			</div>
 			<?php
