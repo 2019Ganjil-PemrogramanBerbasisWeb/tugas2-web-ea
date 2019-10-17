@@ -15,4 +15,5 @@ if (isset($_POST['email'], $_POST['subject'], $_POST['name'], $_POST['msg'])) {
 		$response = 'Message sent!';		
 	}
 }
+header("Location: profile.php");
 ?>

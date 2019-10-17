@@ -103,9 +103,11 @@ $stmt->close();
 					<input type="submit">
 				</form>
 			</div>
-			<?php if ($response): ?>
-			<p><?php echo $response; ?></p>
-			<?php endif; ?>
+			<?php
+				if (isset($response) && $response != '') {
+					echo "<p>".$response."</p>";
+				}
+			?>
 		</div>
 	    <footer>
 		<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |</p>
