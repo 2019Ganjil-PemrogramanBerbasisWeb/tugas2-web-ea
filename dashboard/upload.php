@@ -32,7 +32,7 @@ if (isset($_FILES['image'], $_POST['title'], $_POST['description'])) {
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>$title</title>
+		<title>Upload Image</title>
 		<link href="style.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 	</head>
