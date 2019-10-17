@@ -17,22 +17,23 @@ if (!isset($_POST['username'], $_POST['password'], $_POST['email'])) {
 	redirect('Please complete the registration form!', "index.html");
 }
 // Make sure the submitted registration values are not empty.
-if (empty($_POST['username']) || empty($_POST['password']) || empty($_POST['email'])) {
+elseif (empty($_POST['username']) || empty($_POST['password']) || empty($_POST['email'])) {
 	// One or more values are empty.
 	redirect('Please complete the registration form', "index.html");
 }
-if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+elseif (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
 	redirect('Email is not valid!', "index.html");
 }
-if (preg_match('/[A-Za-z0-9]+/', $_POST['username']) == 0) {
+elseif (preg_match('/[A-Za-z0-9]+/', $_POST['username']) == 0) {
 	redirect('Username is not valid!', "index.html");
 }
-if (strlen($_POST['password']) > 20 || strlen($_POST['password']) < 5) {
+elseif (strlen($_POST['password']) > 20 || strlen($_POST['password']) < 5) {
 	redirect('Password must be between 5 and 20 characters long!', "index.html");
 }
 
 // We need to check if the account with that username exists.
-if ($stmt = $con->prepare('SELECT id, password, fullname FROM accounts WHERE username = ?')) {
+else {
+	if ($stmt = $con->prepare('SELECT id, password, fullname FROM accounts WHERE username = ?')) {
 	// Bind parameters (s = string, i = int, b = blob, etc), hash the password using the PHP password_hash function.
 	$stmt->bind_param('s', $_POST['username']);
 	$stmt->execute();
@@ -78,6 +79,7 @@ if ($stmt = $con->prepare('SELECT id, password, fullname FROM accounts WHERE use
 } else {
 	// Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
 	redirect('Could not prepare statement!', "index.html");
+}
 }
 $con->close();
 ?>
