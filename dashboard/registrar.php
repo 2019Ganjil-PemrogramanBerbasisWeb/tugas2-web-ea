@@ -9,29 +9,29 @@ if (!isset($_POST['username'], $_POST['password'], $_POST['email'])) {
 	// Could not get the data that should have been sent.
 	die ('Please complete the registration form!');
 	echo 'You will be redirected back';
-	redirect(index.html);
+	redirect("index.html");
 }
 // Make sure the submitted registration values are not empty.
 if (empty($_POST['username']) || empty($_POST['password']) || empty($_POST['email'])) {
 	// One or more values are empty.
 	die ('Please complete the registration form');
 	echo 'You will be redirected back';
-	redirect(index.html);
+	redirect("index.html");
 }
 if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
 	die ('Email is not valid!');
 	echo 'You will be redirected back';
-	redirect(index.html);
+	redirect("index.html");
 }
 if (preg_match('/[A-Za-z0-9]+/', $_POST['username']) == 0) {
 	die ('Username is not valid!');
 	echo 'You will be redirected back';
-	redirect(index.html);
+	redirect("index.html");
 }
 if (strlen($_POST['password']) > 20 || strlen($_POST['password']) < 5) {
 	die ('Password must be between 5 and 20 characters long!');
 	echo 'You will be redirected back';
-	redirect(index.html);
+	redirect("index.html");
 }
 
 // We need to check if the account with that username exists.
@@ -45,7 +45,7 @@ if ($stmt = $con->prepare('SELECT id, password, fullname FROM accounts WHERE use
 		// Username already exists
 		echo 'Username exists, please choose another!';
 	echo 'You will be redirected back';
-	redirect(index.html);
+	redirect("index.html");
 	} else {
 		// Username doesnt exists, insert new account
 		// Email Activation
@@ -73,12 +73,12 @@ if ($stmt = $con->prepare('SELECT id, password, fullname FROM accounts WHERE use
 		$stmt->execute();
 		echo '<p>You have successfully registered, you can now login!</p>';
 		echo '<p>You will be redirected to your dashboard or you can <b><a href="homepage.php">click here</a></b></p>';
-		redirect(homepage.php);
+		redirect("homepage.php");
         } else {
 		// Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
 		echo 'Could not prepare statement!';
 		echo 'You will be redirected back';
-		redirect(index.html);
+		redirect("index.html");
         }
     }
     $stmt->close();
@@ -86,7 +86,7 @@ if ($stmt = $con->prepare('SELECT id, password, fullname FROM accounts WHERE use
 	// Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
 	echo 'Could not prepare statement!';
 	echo 'You will be redirected back';
-	redirect(index.html);
+	redirect("index.html");
 }
 $con->close();
 ?>
