@@ -11,7 +11,7 @@
             <div class="mb-5 element-animate">
               <h1 style="font-size: 50px">LEARNING EVERYWHERE</h1>
               <p class="lead">Learn, Do Homework, Upload File, and Everything in one Website</p>
-              <p><a href="dashboard/index.html" class="btn btn-primary">Login or Sign Up</a></p>
+              <p><a href="dashboard/index.php" class="btn btn-primary">Login or Sign Up</a></p>
             </div>
 
             

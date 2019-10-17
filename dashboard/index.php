@@ -1,3 +1,29 @@
+<?php
+    if (isset($_COOKIE['member_login'])) {
+        session_start();
+        include 'db_con.php';
+        if ($stmt = $con->prepare("SELECT id,username,validator  FROM accounts WHERE lookup = ?")) {
+            $lookup = substr($_COOKIE['member_login'], 0, 12);
+            $validator = substr($_COOKIE['member_login'], 12);
+            $stmt->bind_param("s", $lookup);
+            $stmt->execute();
+            $stmt->store_result();
+            if ($stmt->num_rows > 0){
+                $stmt->bind_result($id, $username, $dbvalidator);
+                $stmt->fetch();
+                if (hash_equals(hash('sha256', $validator), $dbvalidator)) {
+                    $_SESSION['loggedin'] = TRUE;
+                    $_SESSION['id'] = $id;
+                    $_SESSION['name'] = $username;
+                    header("Location: home.php");
+                }
+                
+            }
+            $stmt->close();
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -329,7 +355,7 @@
         });
 </script>
 <footer>
-	<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |</p>
+    <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |</p>
 </footer>    
 </body>
 </html>
