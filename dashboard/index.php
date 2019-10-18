@@ -22,6 +22,11 @@
             $stmt->close();
         }
     }
+    if (isset($_SESSION['loggedin'])) {
+        if ($_SESSION['loggedin'] == TRUE) {
+            header("Location: home.php");
+        }
+    }
 ?>
 
 <!DOCTYPE html>
