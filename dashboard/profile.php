@@ -20,6 +20,10 @@ if (isset($_POST['email'], $_POST['subject'], $_POST['name'], $_POST['msg'])) {
 
 // We need to use sessions, so you should always start sessions using the below code.
 session_start();
+if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] != TRUE) {
+	header('Location: index.php');
+	exit();
+}
 include 'db_con.php';
 // We don't have the password or email info stored in sessions so instead we can get the results from the database.
 $stmt = $con->prepare('SELECT password, email, fullname FROM accounts WHERE id = ?');
