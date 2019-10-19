@@ -1,21 +1,21 @@
 <?php
 if(isset($_POST['submit'])){
-$response = '';
-if (isset($_POST['email'], $_POST['subject'], $_POST['name'], $_POST['msg'])) {
-	if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-		$response = 'Email is not valid!';
-	} else if (empty($_POST['email']) || empty($_POST['subject']) || empty($_POST['name']) || empty($_POST['msg'])) {
-		$response = 'Please complete all fields!';
-	} else {
-		$to      = 'ea-contact@localhost';
-		$from    = $_POST['email'];
-		$subject = $_POST['subject'];
-		$message = $_POST['msg'];
-		$headers = 'From: ' . $_POST['email'] . "\r\n" . 'Reply-To: ' . $_POST['email'] . "\r\n" . 'X-Mailer: PHP/' . phpversion();
-		mail($to, $subject, $message, $headers); //Nunggu mail server online
-		$response = 'Message sent!';
+	$response = '';
+	if (isset($_POST['email'], $_POST['subject'], $_POST['name'], $_POST['msg'])) {
+		if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+			$response = 'Email is not valid!';
+		} else if (empty($_POST['email']) || empty($_POST['subject']) || empty($_POST['name']) || empty($_POST['msg'])) {
+			$response = 'Please complete all fields!';
+		} else {
+			$to      = 'ea-contact@localhost';
+			$from    = $_POST['email'];
+			$subject = $_POST['subject'];
+			$message = $_POST['msg'];
+			$headers = 'From: ' . $_POST['email'] . "\r\n" . 'Reply-To: ' . $_POST['email'] . "\r\n" . 'X-Mailer: PHP/' . phpversion();
+			mail($to, $subject, $message, $headers); //Nunggu mail server online
+			$response = 'Message sent!';
+		}
 	}
-}
 }
 
 // We need to use sessions, so you should always start sessions using the below code.
