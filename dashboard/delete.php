@@ -4,7 +4,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] != TRUE) {
 	header('Location: index.php');
 	exit();
 }
-include 'db_gallery.php';
+include 'function.php';
 $pdo = pdo_connect_mysql();
 $msg = '';
 // Check that the poll ID exists
@@ -14,9 +14,10 @@ if (isset($_GET['id'])) {
     $stmt->execute([$_GET['id']]);
     $image = $stmt->fetch(PDO::FETCH_ASSOC);
     if (!$image) {
-        die ('Image doesn\'t exist with that ID!');
+				$msg = 'Image doesn\'t exist with that ID!';
+        redirect('', 'home.php');
     }
-    // Make sure the user confirms beore deletion
+    // Make sure the user confirms before deletion
     if (isset($_GET['confirm'])) {
         if ($_GET['confirm'] == 'yes') {
             // User clicked the "Yes" button, delete file & delete record
@@ -32,32 +33,24 @@ if (isset($_GET['id'])) {
         }
     }
 } else {
-    die ('No ID specified!');
+    die ();
+		redirect('No ID specified!', 'home.php');
 }
-?><!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Delete Image</title>
-		<link href="style.css" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-	</head>
-	<body>
-        <div class="content delete">
-            <h2>Delete Image #<?=$image['id']?></h2>
-            <?php if ($msg): ?>
-            <p><?=$msg?></p>
-            <a href="home.php">back</a>
-            <?php else: ?>
-            <p>Are you sure you want to delete <?=$image['title']?>?</p>
-            <div class="yesno">
-                <a href="delete.php?id=<?=$image['id']?>&confirm=yes">Yes</a>
-                <a href="delete.php?id=<?=$image['id']?>&confirm=no">No</a>
-            </div>
-            <?php endif; ?>
-        </div>
-	    <footer>
-		<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |</p>
-	    </footer>
-    </body>
-</html>
+dashboard_header("Delete Image", strtoupper($_SESSION['name']));
+?>
+  <div class="content delete">
+    <h2>Delete Image #<?=$image['id']?></h2>
+		<?php	if ($msg=='You have deleted the image!'): ?>
+			<p style="background: #38b673; color: white;"><?=$msg?></p>
+			<?php redirect(NULL, 'home.php')?>
+		<?php elseif(!empty($msg)): ?>
+			<p style=\"background: red; color: white;\"><?=$msg?></p>
+		<?php else:?>
+			<p>Are you sure you want to delete <?=$image['title']?>?</p>
+      <div class="yesno">
+      	<a href="delete.php?id=<?=$image['id']?>&confirm=yes">Yes</a>
+      	<a href="delete.php?id=<?=$image['id']?>&confirm=no">No</a>
+      </div>
+		<?php endif; ?>
+  </div>
+<?=dashboard_footer()?>

@@ -4,7 +4,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] != TRUE) {
 	header('Location: index.php');
 	exit();
 }
-include 'db_gallery.php';
+include 'function.php';
 // The output message
 $msg = '';
 // Check if user has uploaded new image
@@ -33,17 +33,16 @@ if (isset($_FILES['image'], $_POST['title'], $_POST['description'])) {
 		$msg = 'Please upload an image!';
 	}
 }
-?><!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Upload Image</title>
-		<link href="style.css" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-	</head>
-	<body>
+dashboard_header("Upload Image", strtoupper($_SESSION['name']));
+?>
 		<div class="content upload">
 			<h2>Upload Image</h2>
+			<?php
+			if ($msg=='Image uploaded successfully!') {
+				echo "<p style=\"background: #38b673; color: white;\">$msg</p>";
+			} elseif(!empty($msg)) {
+				echo "<p style=\"background: red; color: white;\">$msg</p>";
+			} ?>
 			<form action="upload.php" method="post" enctype="multipart/form-data">
 				<label for="image">Choose Image</label>
 				<input type="file" name="image" accept="image/*" id="image">
@@ -53,10 +52,5 @@ if (isset($_FILES['image'], $_POST['title'], $_POST['description'])) {
 				<textarea name="description" id="description"></textarea>
 				<input type="submit" value="Upload Image" name="submit">
 			</form>
-			<p><?=$msg?></p>
 		</div>
-	    <footer>
-		<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |</p>
-	    </footer>
-	</body>
-</html>
+<?=dashboard_footer()?>

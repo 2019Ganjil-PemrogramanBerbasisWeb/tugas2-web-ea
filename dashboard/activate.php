@@ -1,4 +1,5 @@
 <?php
+include 'function.php';
 include 'db_con.php';
 // First we check if the email and code exists...
 if (isset($_GET['email'], $_GET['code'])) {
@@ -14,10 +15,10 @@ if (isset($_GET['email'], $_GET['code'])) {
 				$newcode = 'activated';
 				$stmt->bind_param('sss', $newcode, $_GET['email'], $_GET['code']);
 				$stmt->execute();
-				echo 'Your account is now activated, you can now login!<br><a href="index.php">Login</a>';
+				redirect('Your account is now activated, you can now login!<br><a href="index.php">Login</a>', 'index.php');
 			}
 		} else {
-			echo 'The account is already activated or doesn\'t exist!';
+			redirect('The account is already activated or doesn\'t exist!', 'index.php');
 		}
 	}
 }
