@@ -57,6 +57,16 @@ else {
 			$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 			$stmt->bind_param('ssss', $_POST['username'], $password, $_POST['email'], $_POST['fullname']);
 			$stmt->execute();
+			if ($stmt = $con->prepare('SELECT id FROM accounts WHERE username = ?')) {
+				$stmt->bind_param('s', $_POST['username']);
+				$stmt->execute();
+				$stmt->bind_result($id);
+				$stmt->fetch();
+			}
+			session_start();
+			$_SESSION['loggedin'] = TRUE;
+			$_SESSION['name'] = $_POST['username'];
+        	$_SESSION['id'] = $id;
 			echo '<p>You have successfully registered, you can now login!</p>';
 			echo '<p><b><a href="home.php">click here</a></b></p>';
 			redirect("","home.php");
