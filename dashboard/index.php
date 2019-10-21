@@ -299,6 +299,21 @@
         background-color: #5356ad;
         color: #fff;
         }
+        a {
+            color: black;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        a:hover {
+            text-shadow: 
+    1px 0px 1px #ccc, 0px 1px 1px #eee, 
+    2px 1px 1px #ccc, 1px 2px 1px #eee,
+    3px 2px 1px #ccc, 2px 3px 1px #eee,
+    4px 3px 1px #ccc, 3px 4px 1px #eee,
+    5px 4px 1px #ccc, 4px 5px 1px #eee,
+    6px 5px 1px #ccc, 5px 6px 1px #eee,
+    7px 6px 1px #ccc;
+        }
     </style>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
@@ -328,7 +343,7 @@
             <div class="form-item log-in">
                 <div class="table">
                     <form action="authenticate.php" method="post" class="table-cell">
-                        <h2>e-Learning Academy Account</h2>
+                        <h2><a href="../index.php">e-Learning Academy Account</a></h2>
                         <h4>Remember me!</h4>
                         <input name="remember" type="checkbox" value="Remember me!">
                         <input name="username" placeholder="Username" type="text">
