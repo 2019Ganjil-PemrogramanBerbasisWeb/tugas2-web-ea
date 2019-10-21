@@ -1,12 +1,10 @@
 <?php
 function redirect($err_message, $url) {
 	echo <<<EOT
-	<p>$err_message</p>
-	<p>You will be redirected<p>
 	<script>
-	setTimeout(function(){
-	   window.location.href = '$url';
-	}, 3000);
+	if (window.confirm('$err_message')) {
+		window.location.replace('$url');
+	}	
 	</script>
 	EOT;
 }
