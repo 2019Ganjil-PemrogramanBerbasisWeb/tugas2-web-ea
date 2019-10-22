@@ -2,7 +2,7 @@
     if (isset($_COOKIE['member_login'])) {
         session_start();
         include 'db_con.php';
-        if ($stmt = $con->prepare("SELECT id,username,validator  FROM accounts WHERE lookup = ?")) {
+        if ($stmt = $con->prepare("SELECT id, username, validator  FROM accounts WHERE lookup = ?")) {
             $lookup = substr($_COOKIE['member_login'], 0, 12);
             $validator = substr($_COOKIE['member_login'], 12);
             $stmt->bind_param("s", $lookup);
@@ -17,7 +17,7 @@
                     $_SESSION['name'] = $username;
                     header("Location: home.php");
                 }
-                
+
             }
             $stmt->close();
         }
@@ -141,7 +141,7 @@
         margin-bottom: 0px;
         font-weight: normal;
         font-style: italic;
-        }	
+        }
         .container input {
         margin: 0 auto 15px;
         display: block;
@@ -305,8 +305,8 @@
             transition: 0.3s;
         }
         a:hover {
-            text-shadow: 
-    1px 0px 1px #ccc, 0px 1px 1px #eee, 
+            text-shadow:
+    1px 0px 1px #ccc, 0px 1px 1px #eee,
     2px 1px 1px #ccc, 1px 2px 1px #eee,
     3px 2px 1px #ccc, 2px 3px 1px #eee,
     4px 3px 1px #ccc, 3px 4px 1px #eee,
@@ -364,7 +364,7 @@
                 </div>
             </div>
  	</div>
-    <script>    
+    <script>
         $(document).ready(function() {
             $(".info-item .btn").click(function() {
               $(".container").toggleClass("log-in");
@@ -376,6 +376,6 @@
 </script>
 <footer>
     <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |</p>
-</footer>    
+</footer>
 </body>
 </html>
