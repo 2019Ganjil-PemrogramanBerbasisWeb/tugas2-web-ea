@@ -34,7 +34,7 @@ $stmt->execute();
 $stmt->bind_result($password, $email, $fullname);
 $stmt->fetch();
 $stmt->close();
-dashboard_header(Profile Page);
+dashboard_header("Profile Page", strtoupper($_SESSION['name']));
 ?>
 		<div class="content">
 			<h2>Profile Page</h2>
