@@ -34,64 +34,8 @@ $stmt->execute();
 $stmt->bind_result($password, $email, $fullname);
 $stmt->fetch();
 $stmt->close();
+dashboard_header(Profile Page);
 ?>
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Profile Page</title>
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-		<link href="style.css" rel="stylesheet" type="text/css">
-		<style>
-		input,textarea,select {
-			outline:0;
-			font-family: Tahoma, Geneva, sans-serif;
-		}
-		.contact input[type="text"], .contact input[type="email"] {
-			display: block;
-			margin-top: 15px;
-			padding: 15px;
-			border: 1px solid #dfe0e0;
-			width: 500px;
-		}
-		.contact input[type="text"]:focus, .contact input[type="email"]:focus {
-			border: 1px solid #c6c7c7;
-		}
-		.contact textarea {
-			resize: none;
-			margin-top: 15px;
-			padding: 15px;
-			border: 1px solid #dfe0e0;
-			width: 700px;
-			height: 200px;
-		}
-		.contact textarea:focus {
-			border: 1px solid #c6c7c7;
-		}
-		.contact input[type="submit"] {
-			display: block;
-			margin-top: 15px;
-			padding: 15px;
-			border: 0;
-			background-color: #518acb;
-			font-weight: bold;
-			color: #fff;
-			cursor: pointer;
-			width: 150px;
-		}
-		.contact input[type="submit"]:hover {
-			background-color: #3670b3;
-		}
-		</style>
-	</head>
-	<body class="loggedin">
-		<nav class="navtop">
-			<div>
-				<h1><a href="home.php"><i class="fas fa-percentage"></i><?=strtoupper($_SESSION['name'])?></a></h1>
-				<a href="profile.php"><i class="fas fa-user-circle"></i>Profile</a>
-				<a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
-			</div>
-		</nav>
 		<div class="content">
 			<h2>Profile Page</h2>
 			<div>

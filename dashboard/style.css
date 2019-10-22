@@ -230,6 +230,45 @@ body {
 .delete .yesno a:hover {
     background-color: #32a367;
 }
+input,textarea,select {
+	outline:0;
+	font-family: Tahoma, Geneva, sans-serif;
+}
+.contact input[type="text"], .contact input[type="email"] {
+	display: block;
+	margin-top: 15px;
+	padding: 15px;
+	border: 1px solid #dfe0e0;
+	width: 500px;
+}
+.contact input[type="text"]:focus, .contact input[type="email"]:focus {
+	border: 1px solid #c6c7c7;
+}
+.contact textarea {
+	resize: none;
+	margin-top: 15px;
+	padding: 15px;
+	border: 1px solid #dfe0e0;
+	width: 700px;
+	height: 200px;
+}
+.contact textarea:focus {
+	border: 1px solid #c6c7c7;
+}
+.contact input[type="submit"] {
+	display: block;
+	margin-top: 15px;
+	padding: 15px;
+	border: 0;
+	background-color: #518acb;
+	font-weight: bold;
+	color: #fff;
+	cursor: pointer;
+	width: 150px;
+}
+.contact input[type="submit"]:hover {
+	background-color: #3670b3;
+}
 footer {
     display: flex;
     justify-content: center;
