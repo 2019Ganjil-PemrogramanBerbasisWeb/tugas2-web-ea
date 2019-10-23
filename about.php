@@ -22,7 +22,7 @@
     <div class="row justify-content-center mb-5">
       <div class="col-md-7 text-center">
         <h2>We Share Our Thoughts</h2>
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum magnam illum maiores adipisci pariatur, eveniet.</p>
+        <p class="lead">Melalui Website ini kami menyalurkan pikiran kami dengan berbagai cara dan visualisasi yang berbeda dengan Website lainnya.</p>
       </div>
     </div>
 
@@ -34,9 +34,9 @@
       <div class="col-md-1 order-2"></div>
       <div class="col-md-5 order-3">
         <h2 class="mb-4">First, We Love To Teach</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur reprehenderit laboriosam, eius ipsa consequuntur eos. Nulla dolorem repudiandae mollitia distinctio eos pariatur dolores, voluptate impedit. Eaque quos, sapiente ipsum possimus.</p>
-        <p>Odio ducimus id vero tempora eaque rem voluptatibus tempore sequi ea quod, odit commodi voluptas! Nesciunt dolorum ea repudiandae. Officia eos impedit sapiente tempore, a dolore minus eaque culpa facere.</p>
-        <p>Qui dolore quaerat expedita fugiat aperiam consequatur pariatur quod perspiciatis alias magni, recusandae esse dolorem beatae commodi quo labore earum harum odio voluptatibus non, error perferendis at delectus. Ab, amet.</p>
+        <p>Megajar adalah salah satu media terbaik lama pemahaman kita terhadap suatu materi yang sedang kita pelajari. Mengajar tidak melulu harus dengan tatap muka terlebih lagi sekarang adalah zaman modern yang sangat umum dalam penggunaan computer, laptop, hanphone atau alat-alat lainnya yang dapat terkoneksi langsung dengan internet.</p>
+        <p>Penggunaan Internet saat ini mulai disalahgunakan oleh beberapa oknum tertentu dalam prmakaiannya seperti hacking, tracking, ataupun pembobolan lainnya. Internet terdengar sangat rentan terhadap hacker namun internet juga tidak menutup kemungkinan berdampak sangat baik untuk kita para pelajar yang sedang menuntut ilmu dimanapun berada.</p>
+        <p>Website ini juga merupakan sisi positif dari internet maka dari itu perlu adanya pemakaian internet secara sehat. Dalam Website ini kami memberikan jasa berbentuk tempat belajar elektronik bernama “e-Learninig Academy”</p>
       </div>
 
     </div>
@@ -49,9 +49,7 @@
       <div class="col-md-1 order-2"></div>
       <div class="col-md-5 order-1">
         <h2 class="mb-4">We Are Passionate About Web</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur reprehenderit laboriosam, eius ipsa consequuntur eos. Nulla dolorem repudiandae mollitia distinctio eos pariatur dolores, voluptate impedit. Eaque quos, sapiente ipsum possimus.</p>
-        <p>Odio ducimus id vero tempora eaque rem voluptatibus tempore sequi ea quod, odit commodi voluptas! Nesciunt dolorum ea repudiandae. Officia eos impedit sapiente tempore, a dolore minus eaque culpa facere.</p>
-        <p>Qui dolore quaerat expedita fugiat aperiam consequatur pariatur quod perspiciatis alias magni, recusandae esse dolorem beatae commodi quo labore earum harum odio voluptatibus non, error perferendis at delectus. Ab, amet.</p>
+        <p>Pemrograman berbasis Web adalah salahsatu mata kuliah yang kami ikuti Semester 3 ini. Website ini adalah buah dari mata kuliah tersebut dimana kami diajari berbagai hal mengenai pembuatan website yang bisa kalian lihat saat ini dan website ini pula yang merupakan tugas untuk evaluasi tengah semester kami saat ini.</p>
       </div>
 
     </div>
@@ -65,7 +63,7 @@
     <div class="row justify-content-center mb-5">
       <div class="col-md-7 text-center">
         <h2>Meet Your Instructors</h2>
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum magnam illum maiores adipisci pariatur, eveniet.</p>
+        <p class="lead">Ini adalah beberapa Instruktur yang ada di Website kami saat ini</p>
       </div>
     </div>
     <section class="school-features text-dark d-flex">
@@ -76,7 +74,7 @@
           <div class="media-body">
             <h3 class="mt-0">Rhea Smith</h3>
             <p class="instructor-meta">WordPress Expert</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora fuga suscipit numquam esse saepe quam, eveniet iure assumenda dignissimos aliquam!</p>
+            <p>Aku akan mengajarimu secara cepat dan praktis dalam membuat website dengan WordPress</p>
           </div>
         </div>
 
@@ -85,7 +83,7 @@
           <div class="media-body">
             <h3 class="mt-0">Gregg White</h3>
             <p class="instructor-meta">HTML4, CSS3 Expert</p>
-            <p>Delectus fuga voluptatum minus amet, mollitia distinctio assumenda voluptate quas repellat eius quisquam odio. Aliquam, laudantium, optio? Error velit, alias.</p>
+            <p>Pembuatan Web dari O? Bukan masalah.</p>
           </div>
         </div>
 
@@ -94,7 +92,7 @@
           <div class="media-body">
             <h3 class="mt-0">Rob Gold</h3>
             <p class="instructor-meta">JS Expert</p>
-            <p>Delectus fuga voluptatum minus amet, mollitia distinctio assumenda voluptate quas repellat eius quisquam odio. Aliquam, laudantium, optio? Error velit, alias.</p>
+            <p>Membuat Website dengan bahasa Pemrograman Tingkat Tinggi dan dinamis? Jawabannya memakai Javascript</p>
           </div>
         </div>
 
@@ -104,7 +102,7 @@
           <div class="media-body">
             <h3 class="mt-0">Wennie Poe</h3>
             <p class="instructor-meta">Angular JS Expert</p>
-            <p>Harum, adipisci, aspernatur. Vero repudiandae quos ab debitis, fugiat culpa obcaecati, voluptatibus ad distinctio cum soluta fugit sed animi eaque?</p>
+            <p>Ingin mencoba membuat Website dengan Framework tapi masih ingin memakai bahasa Pemrograman tingkat tinggi dan dinamis? Ayo Belajar dengan saya!</p>
           </div>
         </div>
       </div>
