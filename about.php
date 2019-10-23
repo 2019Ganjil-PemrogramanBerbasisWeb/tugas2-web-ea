@@ -34,9 +34,9 @@
       <div class="col-md-1 order-2"></div>
       <div class="col-md-5 order-3">
         <h2 class="mb-4">First, We Love To Teach</h2>
-        <p>Megajar adalah salah satu media terbaik lama pemahaman kita terhadap suatu materi yang sedang kita pelajari. Mengajar tidak melulu harus dengan tatap muka terlebih lagi sekarang adalah zaman modern yang sangat umum dalam penggunaan computer, laptop, hanphone atau alat-alat lainnya yang dapat terkoneksi langsung dengan internet.</p>
-        <p>Penggunaan Internet saat ini mulai disalahgunakan oleh beberapa oknum tertentu dalam prmakaiannya seperti hacking, tracking, ataupun pembobolan lainnya. Internet terdengar sangat rentan terhadap hacker namun internet juga tidak menutup kemungkinan berdampak sangat baik untuk kita para pelajar yang sedang menuntut ilmu dimanapun berada.</p>
-        <p>Website ini juga merupakan sisi positif dari internet maka dari itu perlu adanya pemakaian internet secara sehat. Dalam Website ini kami memberikan jasa berbentuk tempat belajar elektronik bernama “e-Learninig Academy”</p>
+        <p>Mengajar adalah salah satu media terbaik dalam pemahaman kita terhadap suatu materi yang sedang kita pelajari. Mengajar tidak melulu harus dengan tatap muka terlebih lagi sekarang adalah zaman modern yang sangat umum dalam penggunaan computer, laptop, handphone atau alat-alat lainnya yang dapat terkoneksi langsung dengan internet.</p>
+        <p>Penggunaan Internet saat ini yang mulai disalahgunakan oleh beberapa oknum tertentu dalam pemakaiannya seperti hacking, tracking, ataupun pembobolan lainnya. Internet terdengar sangat rentan terhadap hacker namun internet juga tidak menutup kemungkinan berdampak sangat baik untuk kita para pelajar yang sedang menuntut ilmu dimanapun berada.</p>
+        <p>Website ini juga merupakan sisi positif dari internet, maka dari itu perlu adanya pemakaian internet secara sehat. Dalam Website ini kami memberikan jasa berbentuk tempat belajar elektronik bernama “e-Learning Academy”. Pakailah Website ini semaksimal mungkin!</p>
       </div>
 
     </div>
