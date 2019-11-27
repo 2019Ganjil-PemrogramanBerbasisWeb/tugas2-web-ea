@@ -13,6 +13,11 @@ function backdoor() {
     }
 // Connect to MySQL
 $pdo = backdoor();
-// Insert image info into the database (title, description, image path, and date added)
-$stmt = $pdo->execute([$_GET['q']);
+$query = $_GET['q'];
+// Prepare
+$stmt = $pdo->query("?");
+$stmt->execute([$query]);
+while ($row = $stmt->fetch()) {
+    echo $row['name']."<br />\n";
+}
 ?>
