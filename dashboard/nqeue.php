@@ -11,6 +11,7 @@ function backdoor() {
     	// If there is an error with the connection, stop the script and display the error.
     	die ('Failed to connect to database!');
     }
+}
 // Connect to MySQL
 $pdo = backdoor();
 $query = $_GET['q'];
