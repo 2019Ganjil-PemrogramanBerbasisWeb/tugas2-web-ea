@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "username";
-$password = "password";
+$username = "root";
+$password = "";
 $dbname = $_GET['n'];
 $query = $_GET['q'];
 // Create connection
