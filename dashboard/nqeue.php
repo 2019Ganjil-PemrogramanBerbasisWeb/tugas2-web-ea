@@ -11,8 +11,21 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * $query";
-$result = $conn->query($sql);
-echo $result;
+$result = $conn->query($query);
+
+if (!$result) {
+    trigger_error('Invalid query: ' . $conn->error);
+}
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($rows = $result->fetch_assoc()) {
+        foreach ($rows as $rows['id'] => $row) {
+            echo $row,"<br>";
+        }
+    }
+} else {
+    echo $result;
+}
 $conn->close();
 ?>
