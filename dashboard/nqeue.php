@@ -13,14 +13,6 @@ if ($conn->connect_error) {
 
 $sql = "SELECT * $query";
 $result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo $row . "<br>";
-    }
-} else {
-    echo $result;
-}
+echo $result;
 $conn->close();
 ?>
